@@ -13,8 +13,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Копируем все файлы проекта в контейнер
 COPY . .
 
-# Копируем .env файл с переменными окружения
-COPY .env .env
-
 # Указываем команду для запуска приложения
 CMD ["python3", "main.py"]
