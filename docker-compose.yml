@@ -7,8 +7,6 @@ services:
       dockerfile: Dockerfile
     container_name: bot_container
     restart: always
-    env_file:
-      - ./.env
     volumes:
       - .:/app
     command: ["python3", "main.py"]
