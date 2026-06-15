@@ -22,7 +22,7 @@ main_router = Router()
 @main_router.on_bot_start()
 async def start(payload: aiomax.BotStartPayload, cursor: fsm.FSMCursor):
 
-    doc_attachment = await bot.upload_video(r"src\media\maskot.gif")
+    doc_attachment = await bot.upload_video(r"src/media/maskot.gif")
     await payload.send(
         text=HELLO,
         attachments=[doc_attachment]
@@ -30,7 +30,7 @@ async def start(payload: aiomax.BotStartPayload, cursor: fsm.FSMCursor):
 
     await asyncio.sleep(1)
 
-    doc_file = await bot.upload_file(r"src\media\Политика конфиденциальности.docx.pdf")
+    doc_file = await bot.upload_file(r"src/media/Политика конфиденциальности.docx.pdf")
     await payload.send(
         text="Политика конфиденциальности:",
         attachments=[doc_file]
@@ -169,7 +169,7 @@ async def menu(message: Message, cursor: fsm.FSMCursor):
 # --- КУРСЫ ---
 @main_router.on_message(aiomax.filters.state('menu') and aiomax.filters.equals(slovar["buttonkey2"]))
 async def courses(message: aiomax.Message, cursor: fsm.FSMCursor):
-    doc_attachment = await bot.upload_image((r"src\media\course1.jpg"))
+    doc_attachment = await bot.upload_image((r"src/media/course1.jpg"))
     await message.send(
         text="""Онлайн-курс повышения квалификации «Терапия творчеством» ✨
 
